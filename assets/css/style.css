@@ -1,0 +1,45 @@
+.topSection {
+    background-color: blueviolet;
+    height: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.topicSelector {
+    background-color: beige;
+    display: inline-block;
+}
+
+.seApi {
+    background-color: yellow;
+    display: inline-block;
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    right: 0px;
+}
+
+.mainSection {
+    background-color: blanchedalmond;
+    min-height: 300px;
+    position: relative;
+
+}
+
+.sideBar {
+    background-color: gainsboro;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    min-height: 280px;
+
+}
+
+.codePenApi {
+    display: inline-block;
+}
+
+.instructionArea {
+    display: inline-block;
+}
