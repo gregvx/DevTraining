@@ -21,7 +21,7 @@
 
 .mainSection {
     background-color: blanchedalmond;
-    min-height: 300px;
+    min-height: 500px;
     position: relative;
 
 }
@@ -32,14 +32,25 @@
     position: absolute;
     left: 0px;
     width: 200px;
-    min-height: 280px;
+    min-height: 480px;
 
+}
+
+.rightSide {
+    display: inline-block;
+    /* background-color: hotpink; */
+    min-height: 280px;
+    width: 900px;
+    position: absolute;
+    left: 200px;
 }
 
 .codePenApi {
-    display: inline-block;
+    background-color: lightcoral;
+    min-height: 200px;
 }
 
 .instructionArea {
-    display: inline-block;
+    background-color: indigo;
+    min-height: 200px;
 }
