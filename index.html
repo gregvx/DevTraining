@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -11,6 +12,7 @@
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div id="topSection" class="topSection">
         <div id="topicSelector" class="topicSelector">
@@ -19,7 +21,7 @@
         <div class="seApi" id="seApi">
             <form>
                 <input type="text" name="seSearch" id="seSearch" placeholder="Search Stack Overflow Here...">
-                <input type="submit" value="Search">
+                <button type="submit" value="Search">
             </form>
         </div>
     </div>
@@ -29,7 +31,7 @@
         </div>
         <div id="rightSide" class="rightSide">
             <div id="codePenApi" class="codePenApi">
-                    <iframe src="https://codepen.io/JefMari/pen/jqPJdV" style="height:300px;width:900px"></iframe>
+                <iframe src="https://codepen.io/JefMari/pen/jqPJdV" scrolling="yes"></iframe>
             </div>
             <div id="instructionArea" class="instructionArea">
                 <p>
@@ -37,10 +39,14 @@
                 </p>
             </div>
         </div>
+        <div id="searchResults" class="searchResults">
+            <p>search results go here...</p>
+        </div>
     </div>
 </body>
 <script src="assets/javascript/app.js"></script>
 <script src="assets/javascript/favorites.js"></script>
 <script src="assets/javascript/sidebar.js"></script>
 <script src="assets/javascript/login.js"></script>
+
 </html>
