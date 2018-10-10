@@ -11,12 +11,14 @@
 }
 
 .seApi {
-    background-color: yellow;
+    /* background-color: yellow; */
+    text-align: left;
     display: inline-block;
     height: 80px;
-    width: 100px;
+    width: 300px;
     position: absolute;
     right: 0px;
+    padding-top: 20px;
 }
 
 .mainSection {
@@ -46,8 +48,8 @@
 }
 
 .codePenApi {
-    background-color: lightcoral;
-    min-height: 200px;
+    /* background-color: rgb(255, 95, 95); */
+    min-height: 300px;
 }
 
 .instructionArea {
