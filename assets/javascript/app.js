@@ -68,7 +68,7 @@ var htmlLib = [
 
 var cssLib = [
     {   header: ' TOPIC MARGIN', 
-        explanation: 'Create margins using CSS.' 
+        explanation: 'Create margins using CSS.', 
         exampleCode: '<p><!DOCTYPE html></p>' +
         '<p><html></p>' +
         '<p><head></p>' +
