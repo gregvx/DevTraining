@@ -1,6 +1,5 @@
 
-/*populate in the database for storage
-save to favorites so the user can find themselves in our system
+/*save user email to local storage
 */
 
  // Initialize Firebase
@@ -21,18 +20,13 @@ $("#addEmailBtn").on("click", function(event) { // put the class of the button c
  
    // Grabs user email input
    var userEmail = $("#userEmailInput").val().trim(); 
-  
-   // Creates local "temporary" object for holding new email address
-   var newUserEmail = {
-     email: userEmail 
-   };
- 
+   
    // Uploads user email to the database
-   database.ref().push(newUserEmail);
+   database.ref().push(userEmail);
+
+   //setting user email to local storage
+   localStorage.email = userEmail;
  
-   // Logs everything to console
-   console.log(newEmail.email);
-  
    // Clears all of the text-boxes
    $("#userEmailInput").val("");
  });
@@ -42,18 +36,18 @@ $("#addEmailBtn").on("click", function(event) { // put the class of the button c
    console.log(childSnapshot.val());
  
    // Store everything into a variable
-   var newEmail = childSnapshot.val().name;
+   var newEmail = childSnapshot.val();
    
-   // train Info
+   // user email Info
    console.log(newEmail);
 
    // Create the new row
-   var newRow = $("<tr>").append(
-     $("<td>").text(newUserEmail),
-);
+   //var newRow = $("<tr>").append(
+     //$("<td>").text(newUserEmail),
+//);
 
    // Append the new row to the table
-   $("#UserEmail-table > tbody").append(newRow); //ask Greg to name the table as per this line 
+   //$("#UserEmail-table > tbody").append(newRow); //ask Greg to name the table as per this line 
  });
 
 
