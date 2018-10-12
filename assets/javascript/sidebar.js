@@ -1,4 +1,32 @@
-function fetchAnswers() {
+function fetchQuestions(question) {
+
+    //url format query parameters
+    var params = $.param({
+        order: 'desc',
+        sort: 'relevance',
+        pagesize: 10,
+        site: 'stackoverflow',
+        title: question
+    });
+    
+    //make ajax request
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.stackexchange.com/2.2/similar?' + params
+    }).done(function(response) {
+
+        if(response.items == 0) {
+
+            //TODO: show no matches message
+
+        } else {
+
+            showQuestions(response.items);
+        }
+
+    }).fail(function(error){
+        console.log('A(n) ' + error.name + ' has occured: ' + error.error_message);
+    });
 
     return {
         answerCount: 10,
@@ -6,7 +34,37 @@ function fetchAnswers() {
     };
 }
 
-$('#seApi form input[type="submit"]').on('click', function(event) {
+function showQuestions(questions) {
+
+    //create list group element
+    var list = $('<div>').addClass('list-group');
+
+    //iterate questions in response
+    for(var i = 0; i < questions.length; i++) {
+
+        //skip unanswered questions
+        if(questions[i].isAnswered === false) {
+            continue;
+        }
+
+        //skip unanswered questions
+        if(questions[i].isAnswered === false) {
+            continue;
+        }
+        
+        //append new link to list
+        $('<a>').addClass('list-group-item list-group-item-action')
+        .attr('href', questions[i].link)
+        .attr('target', '_blank')
+        .html(questions[i].title)
+        .appendTo(list);
+
+        //add list to page
+        $('#searchResults').append(list);
+    }
+}
+
+$('#seApi form button').on('click', function(event) {
 
     //prevent form submission
     event.preventDefault();
@@ -19,15 +77,6 @@ $('#seApi form input[type="submit"]').on('click', function(event) {
         return;
     }
     
-    //get api data
-    var data = fetchAnswers();
-    var list = $('<div>').addClass('list-group');
-    
-    for(var i = 0; i < data.answerCount; i++) {
-        
-        $('<a>').addClass('list-group-item list-group-item-action').attr('href', data[i])
-            .appendTo(list);
-    }
-
-    $('#searchResults').append(list);
+    //send ajax request
+    fetchQuestions(question);
 });
