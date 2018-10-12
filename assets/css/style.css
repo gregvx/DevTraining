@@ -5,6 +5,16 @@
     text-align: center;
 }
 
+.loginSection {
+    background-color: firebrick;
+    display: inline-block;
+    height: 80px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    padding-top: 20px;
+}
+
 .topicSelector {
     background-color: beige;
     display: inline-block;
