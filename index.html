@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -11,15 +12,24 @@
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div id="topSection" class="topSection">
+        <div id="loginSection" class="loginSection">
+            <p>
+                Guest User
+            </p>
+            <p>
+                Click here to login
+            </p>
+        </div>
         <div id="topicSelector" class="topicSelector">
             <p>options for topics here...</p>
         </div>
         <div class="seApi" id="seApi">
             <form>
                 <input type="text" name="seSearch" id="seSearch" placeholder="Search Stack Overflow Here...">
-                <input type="submit" value="Search">
+                <button type="submit" value="Search" name="Search">Search...</button>
             </form>
         </div>
     </div>
@@ -29,19 +39,7 @@
         </div>
         <div id="rightSide" class="rightSide">
             <div id="codePenApi" class="codePenApi">
-                    <!-- <iframe src="https://codepen.io/JefMari/pen/jqPJdV" scrolling ="yes" style="height:300px;width:900px"></iframe> -->
-            <br>
-            <h1>HTML header</h1> 
-            <p>The title element defines the title of the document, and is required in all HTML/XHTML documents.
-
-                    The title element:
-                    
-                    defines a title in the browser tab
-                    provides a title for the page when it is added to favorites
-                    displays a title for the page in search engine results</p> 
-            <pre><code><head></code>
-                    <code><title>Page Title</title></code>
-                  <code></head></code></pre>  
+              <iframe src="https://codepen.io/JefMari/pen/jqPJdV" scrolling ="yes" style="height:300px;width:900px"></iframe>
             </div>
             <div id="instructionArea" class="instructionArea">
                 <p>
@@ -49,10 +47,14 @@
                 </p>
             </div>
         </div>
+        <div id="searchResults" class="searchResults">
+            <p>search results go here...</p>
+        </div>
     </div>
 </body>
 <script src="assets/javascript/app.js"></script>
 <script src="assets/javascript/favorites.js"></script>
 <script src="assets/javascript/sidebar.js"></script>
 <script src="assets/javascript/login.js"></script>
+
 </html>
