@@ -1,8 +1,8 @@
 var htmlLib = [
     {
-       header: '<h1>TOPIC HEADER</h1>',
-       explanation: '<p> ‘HTML headings are defined with the <h1> to <h6> tags.</p>' +
-        '<p><h1> defines the most important heading. <h6> defines the least important heading </p>', 
+       header: 'Headers',
+       explanation: 'HTML headings are defined with the <h1> to <h6> tags.' +
+        '<h1> defines the most important heading. <h6> defines the least important heading', 
         exampleCode: '<p><!DOCTYPE html></p>' +
         '<p><html></p>' +
         '<p><head> </p>' +
@@ -18,7 +18,7 @@ var htmlLib = [
         
        
     },
-    {   header: '<h2> TOPIC TABLES </h2>',
+    {   header: 'Tables',
         explanation: '<p>HTML code which generates a table user rows and columns<p>',
         exampleCode: '<p> <!DOCTYPE html></p>' +
         '<p><html></p>' +
@@ -50,7 +50,7 @@ var htmlLib = [
         '<p></body></p>' +
         '<p></html></p>'         
 },
-    {   header: '<h2> TOPIC TABLES </h2>',
+    {   header: 'Images',
         explanation: '<p>HTML code which generates a table user rows and columns<p>',
         exampleCode: '<p> <!DOCTYPE html></p>' +
         '<p><html></p>' +
@@ -185,14 +185,42 @@ var topic = 'html';
 
 $(function () {
     
-    //hide iframes
-    $('iframe').hide();
-
+    checkLogin();
     renderContent();
 });
 
+function checkLogin() {
+
+    if (localStorage.getItem('email') !== null) {
+
+        $('#loginSection').html('<h2>Welcome ' + localStorage.getItem('email') + '</h2>');
+    }
+}
+
 function renderContent() {
 
+    //define template
+    var template = '' +
+'<div class="col-lg-12">' +
+    '<div class="card">' +
+        '<div class="card-body">' +
+            '<div>' +
+                '<div class="row card-header">' +
+                    '<div class="col-6">' +
+                        '<h5></h5>' +
+                    '</div>' + 
+                    '<div class="col-6 text-right">' +
+                        '<button class="btn btn-info bookmark-button" type="button">Bookmark</button>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div class="card-text"></div>' +
+            '<pre><code></code></pre>' +
+        '</div>' +
+    '</div>' +
+'</div>';
+
+    //render chosen topic
     var currentTopic;
     switch(topic) {
 
@@ -209,16 +237,23 @@ function renderContent() {
             break;
     }
 
+    //iterate library
+    var navRow = $('<div>').addClass('list-group');
     for(var i = 0; i < currentTopic.length; i++) {
         
-        var row = $('<div>').addClass('row').append($('<div>').addClass('col').append($('<div>').addClass('card')));
+        //populate nav
+        navRow.append($('<a>').addClass('list-group-item list-group-item-action')
+        .attr('href', '#content-' + i)
+        .text(currentTopic[i].header));
+        $('#sideBar').append(navRow);
+        
+        //create content row
+        var contentRow = $('<div>').attr('id', 'content-' + i).addClass('row').html(template);
 
-        var cardBody = $('<div>').addClass('card-body');
-        cardBody.append($('<h5>').addClass('card-header').text(currentTopic[i].header));
-        cardBody.append($('<p>').addClass('card-text').text(currentTopic[i].explanation));
-        cardBody.append($('<pre>').append($('<code>').text(currentTopic[i].exampleCode)));
-
-        $('#instructionArea').append(row.append(cardBody));
-
+        //populate template
+        contentRow.find('h5').text(currentTopic[i].header);
+        contentRow.find('.card-text').text(currentTopic[i].explanation);
+        contentRow.find('code').text(currentTopic[i].exampleCode);
+        $('#instructionArea').append(contentRow);
     }
 }
