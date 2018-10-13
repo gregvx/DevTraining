@@ -30,6 +30,8 @@ $("#addEmailBtn").on("click", function(event) { // put the class of the button c
  
    // Clears all of the text-boxes
    $("#userEmailInput").val("");
+
+   checkLogin();
  });
  
  // 3. Create Firebase event for adding user email to the database and a row in the html when a user adds an entry
