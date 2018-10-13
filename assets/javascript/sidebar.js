@@ -21,6 +21,7 @@ function fetchQuestions(question) {
 
         } else {
 
+            $('#searchResults').show();
             showQuestions(response.items);
         }
 
@@ -35,9 +36,6 @@ function fetchQuestions(question) {
 }
 
 function showQuestions(questions) {
-
-    //create list group element
-    var list = $('<div>').addClass('list-group');
 
     //iterate questions in response
     for(var i = 0; i < questions.length; i++) {
@@ -57,13 +55,19 @@ function showQuestions(questions) {
         .attr('href', questions[i].link)
         .attr('target', '_blank')
         .html(questions[i].title)
-        .appendTo(list);
+        .appendTo('#questions');
 
         //add list to page
-        $('#searchResults').append(list);
+        // $('#searchResults').append(list);
     }
 }
 
+//hide search results on document load
+$(function () {
+    $('#searchResults').hide();
+});
+
+//define api search onclick listener
 $('#seApi form button').on('click', function(event) {
 
     //prevent form submission
@@ -76,7 +80,16 @@ $('#seApi form button').on('click', function(event) {
     if (question === '') {
         return;
     }
+
+    //clear previous results if set
+    $('#questions').html('');
     
     //send ajax request
     fetchQuestions(question);
+});
+
+//define search results close button onclick listener
+$('#searchResults button').on('click', function() {
+
+    $('#searchResults').hide();
 });
