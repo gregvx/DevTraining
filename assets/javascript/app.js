@@ -186,7 +186,7 @@ var topic = 'html';
 $(function () {
     
     //hide iframes
-    $('iframe').hide();
+    // $('iframe').hide();
 
     renderContent();
 });
