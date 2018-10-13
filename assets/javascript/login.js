@@ -22,7 +22,8 @@ $("#addEmailBtn").on("click", function(event) { // put the class of the button c
    var userEmail = $("#userEmailInput").val().trim(); 
    
    // Uploads user email to the database
-   database.ref().push(userEmail);
+   var user ={email: userEmail, favorites: ["blah"]}
+      database.ref().push(user);   
 
    //setting user email to local storage
    localStorage.email = userEmail;
@@ -36,10 +37,12 @@ $("#addEmailBtn").on("click", function(event) { // put the class of the button c
    console.log(childSnapshot.val());
  
    // Store everything into a variable
-   var newEmail = childSnapshot.val();
+   var email = localStorage.email;
+   var newUser = childSnapshot.val();
+    if (email===newUser.email){
+      console.log (newUser.favorites);
+    }
    
-   // user email Info
-   console.log(newEmail);
 
    // Create the new row
    //var newRow = $("<tr>").append(
