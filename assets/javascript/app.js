@@ -185,7 +185,13 @@ var topic = 'html';
 
 $(function () {
     
+<<<<<<< HEAD
     checkLogin();
+=======
+    //hide iframes
+    // $('iframe').hide();
+
+>>>>>>> master
     renderContent();
 });
 

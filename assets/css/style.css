@@ -1,5 +1,6 @@
 .topSection {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
+    background-image: url("../images/purple-header.jpg");
     height: 100px;
     /* position: relative; */
     /* text-align: center; */
