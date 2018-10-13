@@ -12,6 +12,10 @@
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <!-- to get modal to work they added these -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -70,6 +74,23 @@
                     </div>
                 </div>
             </div>
+            <div class="model">
+                    <h2>Code Pen </h2>
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">launch</button>
+                  
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal-dialog">
+                      
+                        <!-- Modal content-->
+                        <iframe src="https://codepen.io/JefMari/pen/jqPJdV" scrolling ="yes" style="height:300px;width:900px"></iframe>
+                        <!-- <img src="assets/images/IMG_1188.jpg" style="width:600px;height:400px;"> -->
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
             <!-- <div id="rightSide" class="rightSide">
                 <div id="codePenApi" class="codePenApi">
                     <iframe src="https://codepen.io/JefMari/pen/jqPJdV" scrolling ="yes" style="height:300px;width:900px"></iframe>
@@ -78,6 +99,23 @@
             </div> -->
         </div>
     </div>
+    <!-- <div class="model">
+            <h2>BootCamp </h2>
+            Trigger the modal with a button
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Platoon</button>
+          
+            Modal
+             <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                Modal content
+                <img src="assets/images/IMG_1188.jpg" style="width:600px;height:400px;">
+              
+                
+              </div>
+            </div>
+            
+          </div> --> 
 </body>
 <script src="assets/javascript/app.js"></script>
 <script src="assets/javascript/favorites.js"></script>
