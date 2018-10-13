@@ -1,17 +1,18 @@
 .topSection {
     background-color: blueviolet;
     height: 100px;
-    position: relative;
-    text-align: center;
+    /* position: relative; */
+    /* text-align: center; */
 }
 
 .loginSection {
-    background-color: firebrick;
+    /* background-color: firebrick;
     display: inline-block;
     height: 100px;
-    width: 200px;
-    position: absolute;
-    left: 0px;
+    line-height: 100px; */
+    /* width: 200px; */
+    /* position: absolute;
+    left: 0px; */
     /* padding-top: 20px; */
 }
 
@@ -26,12 +27,12 @@
 }
 
 .buttonBar {
-    position: absolute;
+    /* position: absolute;
     text-align: center;
     display: inline-block;
-    bottom: 0px;
+    bottom: 0px; */
     /* background-color: turquoise; */
-    width: 300px;
+    /* width: 300px; */
 }
 
 .seApi {
@@ -50,19 +51,19 @@
 }
 
 .mainSection {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond;
     min-height: 500px;
-    position: relative;
+    position: relative; */
 
 }
 
 .sideBar {
-    background-color: gainsboro;
+    /* background-color: gainsboro;
     display: inline-block;
     position: absolute;
     left: 0px;
     width: 15%;
-    min-height: 480px;
+    min-height: 480px; */
 
 }
 
@@ -76,13 +77,16 @@
 }
 
 .searchResults {
-    display: inline-block;
-    background-color: khaki;
-    min-height: 280px;
-    width: 15%;
+    /* display: none; */
+    /* background-color: khaki; */
+    /* min-height: 280px; */
+    width: 25%;
     position: absolute;
+    top:0;
     right: 0;
-    min-height: 480px;
+    margin-top: 100px;
+    z-index: 1;
+    /* min-height: 480px; */
 }
 
 .codePenApi {
@@ -96,6 +100,11 @@
 }
 
 .instructionArea {
-    background-color: indigo;
-    min-height: 200px;
+    /* background-color: indigo;
+    min-height: 200px; */
 }
+
+/* .instructionArea .card-header h5 {
+    width: 90%;
+    display: inline-block;
+} */
