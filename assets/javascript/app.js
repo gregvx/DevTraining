@@ -3,12 +3,12 @@ var htmlLib = [
        header: 'Headers',
        explanation: 'HTML headings are defined with the <h1> to <h6> tags.' +
         '<h1> defines the most important heading. <h6> defines the least important heading', 
-        exampleCode: '<p><!DOCTYPE html></p>' +
-        '<p><html></p>' +
-        '<p><head> </p>' +
-        '<p>  <title>Page Title</title> </p>' +
-        '<p></head> </p>' +
-        '<p><body> </p>' +
+        exampleCode: '<!DOCTYPE html>' +
+        '<html>' +
+        '<head>' +
+        '<title>Page Title</title>' +
+        '</head>' +
+        '<body>' +
         
         '<p><p>The content of the body element is displayed in the browser window.</p> </p>' +
         '<p><p>The content of the title element is displayed in the browser tab, in favorites and in search engine results.</p> </p>' +
@@ -185,13 +185,7 @@ var topic = 'html';
 
 $(function () {
     
-<<<<<<< HEAD
     checkLogin();
-=======
-    //hide iframes
-    // $('iframe').hide();
-
->>>>>>> master
     renderContent();
 });
 
@@ -209,14 +203,14 @@ function renderContent() {
     var template = '' +
 '<div class="col-lg-12">' +
     '<div class="card">' +
-        '<div class="card-body">' +
+        '<div class="card-body pt-0">' +
             '<div>' +
                 '<div class="row card-header">' +
                     '<div class="col-6">' +
                         '<h5></h5>' +
                     '</div>' + 
                     '<div class="col-6 text-right">' +
-                        '<button class="btn btn-info bookmark-button" type="button">Bookmark</button>' +
+                        '<button class="btn btn-primary bookmark-button" type="button">Bookmark</button>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
@@ -254,7 +248,7 @@ function renderContent() {
         $('#sideBar').append(navRow);
         
         //create content row
-        var contentRow = $('<div>').attr('id', 'content-' + i).addClass('row').html(template);
+        var contentRow = $('<div>').attr('id', 'content-' + i).addClass('row mb-5').html(template);
 
         //populate template
         contentRow.find('h5').text(currentTopic[i].header);
