@@ -3,18 +3,18 @@ var htmlLib = [
        header: 'Headers',
        explanation: 'HTML headings are defined with the <h1> to <h6> tags.' +
         '<h1> defines the most important heading. <h6> defines the least important heading', 
-        exampleCode: '<!DOCTYPE html>' +
-        '<html>' +
-        '<head>' +
-        '<title>Page Title</title>' +
-        '</head>' +
-        '<body>' +
+        exampleCode: '<!DOCTYPE html>\n' +
+        '<html>\n' +
+        '<head>\n' +
+        '\t<title>Page Title</title>\n' +
+        '</head>\n' +
+        '<body>\n' +
         
-        '<p><p>The content of the body element is displayed in the browser window.</p> </p>' +
-        '<p><p>The content of the title element is displayed in the browser tab, in favorites and in search engine results.</p> </p>' +
+        '\t<p>The content of the body element is displayed in the browser window.</p>\n' +
+        '\t<p>The content of the title element is displayed in the browser tab, in favorites and in search engine results.</p>\n' +
         
-        '<p></body> </p>' +
-        '<p></html> </p>' 
+        '</body>\n' +
+        '</html>\n' 
         
        
     },
@@ -210,11 +210,11 @@ function renderContent() {
                         '<h5></h5>' +
                     '</div>' + 
                     '<div class="col-6 text-right">' +
-                        '<button class="btn btn-primary bookmark-button" type="button">Bookmark</button>' +
+                        '<button class="btn btn-primary launch-button" type="button">Try It Out</button>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
-            '<div class="card-text"></div>' +
+            '<div class="card-text p-3"></div>' +
             '<pre><code></code></pre>' +
         '</div>' +
     '</div>' +
