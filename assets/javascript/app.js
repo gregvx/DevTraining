@@ -201,7 +201,7 @@ function renderContent() {
                         '<h5></h5>' +
                     '</div>' + 
                     '<div class="col-6 text-right">' +
-                        '<button class="btn btn-primary launch-button" type="button">Try It Out</button>' +
+                        '<button type="button" class="btn btn-primary launch-button">Try It Out</button>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
@@ -242,6 +242,7 @@ function renderContent() {
         var contentRow = $('<div>').attr('id', 'content-' + i).addClass('row mb-5').html(template);
 
         //populate template
+        contentRow.find('.launch-button').attr('data-code', currentTopic[i].exampleCode);
         contentRow.find('h5').text(currentTopic[i].header);
         contentRow.find('.card-text').text(currentTopic[i].explanation);
         contentRow.find('code').text(currentTopic[i].exampleCode);
@@ -260,3 +261,24 @@ $('#buttonBar button').on('click', function() {
     topic = $(this).attr('data-topic');
     renderContent();
 });
+
+$(document).on('click', '.launch-button', function() {
+
+    // $.ajax({
+    //     type: "POST",
+    //     url: "https://codepen.io/pen/define",
+    //     crossDomain: true,
+    //     data: {"title": "New Pen!", "html": "<div>Hello, World!</div>"},
+    //     dataType: 'jsonp',
+    //     success: function (response) {
+    //         $('.modal-body').html(response);
+    //         $('#codepenModal').modal('show');
+    //     }
+    // });
+
+    var input = $('<input>').attr('type', 'hidden').attr('name', 'data').val('{"title": "New Pen!", "html": "' + $(this).data('code') + '"}');
+    var form = $('<form>').attr('action', 'https://codepen.io/pen/define').attr('target', 'codepen').attr('method', 'post').append(input);
+    $('body').append(form);
+    form.submit();
+    $('#codepenModal').modal('show');
+})

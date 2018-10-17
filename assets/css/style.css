@@ -7,6 +7,11 @@ pre {
     -moz-tab-size: 4;
 }
 
+#codepen {
+    width: 100%;
+    height: 78vh;
+}
+
 .btn-primary {
     background-color: #9c7fac !important;
     border-color: #9c7fac !important;
@@ -73,13 +78,21 @@ pre {
     color: white;
 }
 
-.codePenApi {
-    min-height: 500px;
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.codePenApi iframe {
-    height: 500px;
-    width: 100%;
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.embed-responsive-16by9 {
+    padding-bottom: 83.75% !important;
 }
 
 @media screen and (max-width: 680px) {
