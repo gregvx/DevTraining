@@ -18,7 +18,7 @@ var htmlLib = [
         '<html>\n' +
         '<body>\n' +      
         '\t<h2>Basic HTML Table</h2>\n' +       
-        '\t<table style="width:100%">\n' +
+        '\t<table style=\'width: 100%;\'>\n' +
         '\t\t<tr>\n' +
         '\t\t\t<th>Firstname</th>\n' +
         '\t\t\t<th>Lastname</th>\n' +
@@ -49,7 +49,7 @@ var htmlLib = [
         '<html>\n' +
         '<body>\n' + 
         '\t<h2>HTML Image</h2>\n' +
-        '\t<img src="https://dummyimage.com/600x400/c722c7/fff&text=Boot+Camp+" alt="Trulli" width="500" height="333">\n' +
+        '\t<img src=\'https://dummyimage.com/600x400/c722c7/fff&text=Boot+Camp+\' alt=\'Trulli\' width=\'500\' height=\'333\'>\n' +
         '</body>\n' +
         '</html>\n' 
         
@@ -121,49 +121,50 @@ var cssLib = [
 ];
 
 var jsLib =[
-        {   header: "TOPIC FUNCTION",
+        {   header: "Functions",
             explanation: "Use functions in JavaScript when you need to repeat code. ",
-            exampleCode: '<p><!DOCTYPE html></p>' +
-            '<p><html></p>' +
-            '<p><body></p>' +
+            exampleCode: '<!DOCTYPE html>\n' +
+            '<html>\n' +
+            '<body>\n' +
             
-            '<p><h2>JavaScript Functions</h2></p>' +
+            '\t<h2>JavaScript Functions</h2></p>' +
             
-            '<p><p>This example calls a function which performs a calculation, and returns the result:</p></p>' +
+            '\t<p>This example calls a function which performs a calculation, and returns the result:</p>\n' +
             
-            '<p><p id="demo"></p></p>' +
+            '\t<p id="demo"></p>\n' +
             
-            '<p><script></p>' +
-            '<p>function myFunction(p1, p2) {</p>' +
-                '<p>    return p1 * p2;</p>' +
-                '<p>}</p>' +
-                '<p>document.getElementById("demo").innerHTML = myFunction(4, 3);</p>' +
-                '<p></script></p>' +
+            '\t<script>\n' +
+                '\t\tfunction myFunction(p1, p2) {\n' +
+                    '\t\t\treturn p1 * p2;\n' +
+                '\t\t}' +
+            '\t\tdocument.getElementById(\'demo\').innerHTML = myFunction(4, 3);\n' +
+                '\t</script>\n' +
             
-                '<p></body></p>' +
-                '<p></html></p>' 
+                '</body>\n' +
+                '</html>\n' 
  
 
 
 },
-{       header: 'TOPIC FOR LOOP',
+{       header: 'For Loops',
         explanation: "Allows you to loop through code until a condition is met.",
         exampleCode: 
-        '<p>var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];</p>' +
-        '<p>var text = "";</p>' +
-        '<p>var i;</p>' +
-        '<p>for (i = 0; i < cars.length; i++) {</p>' +
-            '<p>    text += cars[i] + "<br>";</p>' +
-            '<p>}</p>' +
-            '<p>document.getElementById("demo").innerHTML = text;</p>' 
+        '<script>\n' +
+        '\tvar cars = [\'BMW\', \'Volvo\', \'Saab\', \'Ford\', \'Fiat\', \'Audi\'];\n' +
+        '\tvar text = \'\';\n' +
+        '\tvar i;\n' +
+        '\tfor (i = 0; i < cars.length; i++) {\n' +
+            '\t\ttext += cars[i] + \'<br>\';\n' +
+            '\t}' +
+            '\tdocument.getElementById(\'demo\').innerHTML = text;\n' 
         
 
 },
-{       header: 'TOPIC RANDOM',
-        explanation: "Used to create a random number.",
-        exampleCode: '<p><script></p>'+
-        '<p>document.getElementById("demo").innerHTML = Math.random();</p>'+
-        '<p></script></p>'
+{       header: 'Random Numbers',
+        explanation: "Used to generate a random number.",
+        exampleCode: '<script>\n'+
+        '\tdocument.getElementById(\'demo\').innerHTML = Math.random();\n'+
+        '</script>\n'
         
 
 }
